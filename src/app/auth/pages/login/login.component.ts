@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component } from '@angular/core'
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-login',
@@ -9,11 +10,16 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 export class LoginComponent {
 
-  MiFormulario: FormGroup = this.fb.group({
+  constructor(private fb: FormBuilder, private router: Router){}
+
+  FormularioLogin: FormGroup = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(6)]]
   })
 
-  constructor(private fb: FormBuilder){}
-
+  login(){
+    console.log(this.FormularioLogin.value)
+    this.router.navigateByUrl("/dashboard")
+  }//login
+  
 }
