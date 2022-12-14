@@ -1,34 +1,43 @@
 <form class="login100-form" autocomplete="off">
-                
+    <!-- Titulo -->  
     <span class="login100-form-title p-b-49">
         Registro
     </span>
-
+    <!-- Nombre  -->
+    <div class="wrap-input100 m-b-23">
+        <span class="label-input100">Nombre</span>
+        <input class="input100"
+                type="text"
+                name="name"
+                placeholder="Ingrese su Nombre">
+        <span class="focus-input100"></span>
+    </div>
+    <!-- Email  --> 
     <div class="wrap-input100 m-b-23">
         <span class="label-input100">Email</span>
         <input class="input100"
                type="email" 
                name="email" 
-               placeholder="Ingrese su email">
+               placeholder="Ingrese su Email">
         <span class="focus-input100"></span>
     </div>
-
+    <!-- Password -->
     <div class="wrap-input100">
         <span class="label-input100">Password</span>
         <input class="input100"
                type="password"
                name="password" 
-               placeholder="Ingrese su contraseña">
+               placeholder="Ingrese su Contraseña">
         <span class="focus-input100"></span>
     </div>
     
     <div class="text-right p-t-8 p-b-31"></div>
-    
+    <!-- Boton  -->
     <div class="container-login100-form-btn">
         <div class="wrap-login100-form-btn">
             <div class="login100-form-bgbtn"></div>
             <button class="login100-form-btn">
-                Login
+                Registrarse
             </button>
         </div>
     </div>
@@ -39,7 +48,7 @@
         </span>
 
         <a routerLink="/auth/login" class="txt2">
-            Inicia sesion aquí
+            Inicie sesion aquí
         </a>
     </div>
 </form>
