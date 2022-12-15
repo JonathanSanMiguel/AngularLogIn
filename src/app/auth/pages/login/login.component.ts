@@ -1,6 +1,7 @@
 import { Component } from '@angular/core'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router'
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router'
 
 export class LoginComponent {
 
-  constructor(private fb: FormBuilder, private router: Router){}
+  constructor(private fb: FormBuilder, private router: Router, private authService: AuthService){}
 
   FormularioLogin: FormGroup = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
@@ -18,8 +19,13 @@ export class LoginComponent {
   })
 
   login(){
-    console.log(this.FormularioLogin.value)
-    this.router.navigateByUrl("/dashboard")
+    //console.log(this.FormularioLogin.value)
+    const {email, password} = this.FormularioLogin.value
+
+    this.authService.Login(email, password).subscribe(resp => {
+      console.log(resp);
+    })
+    //this.router.navigateByUrl("/dashboard")
   }//login
   
 }

@@ -1,4 +1,5 @@
 export interface AuthResponse {
-    "msg": string,
+    "msg": string
+    "uid": string
     "JWtoken": string
 }
